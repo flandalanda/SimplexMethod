@@ -1,4 +1,4 @@
-function [Q, P, r] = calcTab(A, b, c, sbasis)
+function [Q, P, r, nbasis] = calcTab(A, b, c, sbasis)
 %UNTITLED2 Summary of this function goes here
 %   
 colSet = linspace(1,size(A,2),size(A,2));
@@ -15,11 +15,6 @@ P = invAb*b;
 
 r = cn - (cb'*invAb*An)';
 
-enterVar = minPositiveIndex(r);
-
-while enterVar > 0
-    
-end
 
 end
 
