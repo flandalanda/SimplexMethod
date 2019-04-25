@@ -1,4 +1,4 @@
-function [Q, P, r, nbasis] = calcTab(A, b, c, sbasis)
+function [Q, P, r, nbasis, cb, invAb] = calcTab(A, b, c, sbasis)
 %UNTITLED2 Summary of this function goes here
 %   
 colSet = linspace(1,size(A,2),size(A,2));
