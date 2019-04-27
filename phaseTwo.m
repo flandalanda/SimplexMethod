@@ -1,7 +1,7 @@
 function [bound, obasis, obfs, oval] = phaseTwo(A, b, c, sbasis, sbfs)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
-[Q P r, nbasis,cb, invAb] = calcTab(A, b , c, sbasis);
+[Q, P, r, nbasis,cb, invAb] = calcTab(A, b , c, sbasis);
 
 
 enterVarIndex = minPositiveIndex(r)
@@ -11,7 +11,7 @@ while enterVarIndex > 0 && bound == 1
     if exitVarIndex > 0
         enterValue = nbasis(enterVarIndex);
         sbasis(exitVarIndex) = enterValue;
-        [Q P r, nbasis,cb, invAb] = calcTab(A, b, c, sbasis);
+        [Q, P, r, nbasis,cb, invAb] = calcTab(A, b, c, sbasis);
         enterVarIndex = minPositiveIndex(r);
     else
         bound = 0;
