@@ -9,8 +9,7 @@ basis = [];
 bfs = [];
 
 
-%Verify that Ax=b has non-empty solution set
-%if norm(A*(A\b) - b, inf) == 0
+
 
 %We first convert the problem so that b>=0
 for i = 1:size(b,1)
@@ -35,5 +34,4 @@ end
      basis = obasis;
      bfs = obfs(1:size(A,2));
  end
-%end
 

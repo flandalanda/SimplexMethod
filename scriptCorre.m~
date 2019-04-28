@@ -15,4 +15,9 @@ sbfs=[1 2];
 [bound, obasis, obfs, oval] = phaseTwo(A,b,c,sbasis,sbfs)
 
 %Auxiliary problem example
-A = [
+A = [1 3 1; 0 2 1];
+b = [4 2]';
+c = [1 2 0]';
+
+%Degeneracy
+A = [-1 1 -1; 1 0 

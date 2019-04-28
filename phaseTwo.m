@@ -4,7 +4,7 @@ function [bound, obasis, obfs, oval] = phaseTwo(A, b, c, sbasis, sbfs)
 [Q, P, r, nbasis,cb, invAb] = calcTab(A, b , c, sbasis);
 
 
-enterVarIndex = minPositiveIndex(r)
+enterVarIndex = minPositiveIndex(r);
 bound = 1;
 while enterVarIndex > 0 && bound == 1
     exitVarIndex = getLeavingVar(P,Q,enterVarIndex);

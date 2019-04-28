@@ -5,8 +5,6 @@ function [status, obasis , obfs, oval] = bothPhases(A, b, c)
 oval = 0;
 obfs = [];
 obasis = [];
-
-%Start with suposition that problem is infeasible
 status = -1;
 
 %PHASE ONE
@@ -16,12 +14,12 @@ if nvac == 1
     %Start phase two
     [bound, obasis, obfs, oval] = phaseTwo(A, b, c, sbasis, sbfs);
     if bound == 0
-        %Problem is unbounded
+        %Problem is onbounded
         status = 0;
     else
         %Problem is bounded
         status = 1;
-    end
+        e
 
 
 end

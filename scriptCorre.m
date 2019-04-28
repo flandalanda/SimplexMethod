@@ -18,3 +18,10 @@ sbfs=[1 2];
 A = [1 3 1; 0 2 1];
 b = [4 2]';
 c = [1 2 0]';
+[nvac, basis, bfs] = phaseOne(A, b, c)
+
+%Degeneracy
+A = [-1 1 1 0; 1 0 0 1];
+b = [0 2]';
+c = [0 1 0 0]';
+[status, obasis , obfs, oval] = bothPhases(A, b, c)
