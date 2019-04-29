@@ -1,17 +1,17 @@
 %firstassignment.m
-%AndrÈs Cruz y Vera  155899
+%Andr√©s Cruz y Vera  155899
 %Luis Felipe Landa Lizarralde 158228
-%MÛnica Elizabeth Alba Gonz·lez 160502
+%M√≥nica Elizabeth Alba Gonz√°lez 160502
 
 %In this file you will find all the functions needed to implement de
 %Simplex Method that we have seen in class. We wrote the important
 %functions at the begining and in the same order as in the document you 
-%gave us, and finally the auxiliary functions.
+%provided, and finally the auxiliary functions.
 
 function [nvac, basis, bfs] = phaseOne(A, b, c)
 %PHASEONE
 %  First phase of simplex method, we find a basic feasible solution, if 
-%  it exists. Here we receive A mxn matrix with m<=n
+%  it exists. Here we receive an mxn matrix with m<=n
 %  and a rank of m, b column vector with m rows, c column vector with n
 %  rows.
 %  Output: nvac = 0 if the feasible set is empty; nvac = 1 if the feasible 
@@ -33,19 +33,19 @@ for i = 1:size(b,1)
     end
 end
 
- %Formulate the auxiliary Linear Program. This means, we add the slack
- %variables to A if needed and then add the corresponding ceros to c and 
+ %Formulate the auxiliary Linear Program. This means, we add the correction
+ %variables to A and then add the corresponding zeros to c and 
  %then build the basis.
  Aprime = [A eye(size(A,1))];
  cPrime = [ zeros(size(A,2),1) ; ones(size(A,1),1)]*(-1);
  sbasisAux = linspace(size(A,2)+1, size(A,2)+size(A,1), size(A,1));
  sbfs = [];
  
- %Run Simplex method to get the auxiliar program
+ %Run Simplex method to get the solution to the auxiliar program
  [bound, obasis, obfs, oval] = phaseTwo(Aprime,b,cPrime,sbasisAux,sbfs);
 
- %If auxiliary objetive function reaches 0 then it's feasible set is non empty
- %and we obtain a feasible basis by removing auxiliary variables
+ %If auxiliary objetive function reaches 0 then the feasible set of the original program
+ %is non empty and we obtain a feasible basis by removing auxiliary variables
  if oval == 0
      nvac = 1;
      basis = obasis;
