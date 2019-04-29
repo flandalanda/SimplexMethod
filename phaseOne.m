@@ -2,14 +2,10 @@ function [nvac, basis, bfs] = phaseOne(A, b, c)
 %PHASEONE
 %  First phase of simplex method
 
-
 %We start by asuming non feasibility
 nvac = 0;
 basis = [];
 bfs = [];
-
-
-
 
 %We first convert the problem so that b>=0
 for i = 1:size(b,1)

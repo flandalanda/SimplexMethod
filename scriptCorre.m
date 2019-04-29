@@ -29,6 +29,6 @@ c = [0 1 0 0]';
 %Infeasibility
 A = [1 3 1 1 0; 0 2 1 0 1];
 b = [4 2]';
-c = [1 2 0 0]';
+c = [1 2 0 0 0]';
 [status, obasis , obfs, oval] = bothPhases(A, b, c)
 
